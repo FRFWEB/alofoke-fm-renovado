@@ -1,26 +1,56 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <div class="flex w-full h-screen justify-center items-center flex-col">
+      <RadioComponent
+        img="logo.png"
+        altName="alfoke.fm"
+        title="ALOFOKE LA RADIO N° 1 DE RD"
+      />
+      <SocialNetworks :networks="this.networks" />
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import RadioComponent from "@/components/Radio.vue";
+import SocialNetworks from "@/components/SocialNetworks.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    RadioComponent,
+    SocialNetworks,
+  },
+  data() {
+    return {
+      networks: [
+        {
+          name: "youtube",
+          url: "https://www.youtube.com/@Alofokeradioshow",
+          icon: "fab fa-youtube",
+          bg_network: "bg-red-700",
+          text_color_network: "text-white",
+          title: "ALOFOKERADIOSHOW",
+        },
+        {
+          name: "tiktok",
+          url: "https://www.tiktok.com/@matiasalofoke",
+          icon: "fab fa-tiktok",
+          bg_network: "bg-white",
+          text_color_network: "text-dark",
+          title: "MATIASALOFOKE",
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  background: #000;
+}
+
+.text-aton {
+  font-family: "Anton", sans-serif;
 }
 </style>
